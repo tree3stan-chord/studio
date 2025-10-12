@@ -10,7 +10,7 @@
     "lint": "next lint"
   },
   "engines": {
-    "node": "^22.2.0"
+    "node": ">=20.0.0"
   },
   "dependencies": {
     "@ffmpeg/ffmpeg": "^0.12.10",
