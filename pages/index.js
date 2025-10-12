@@ -56,7 +56,7 @@ export default function Studio() {
     <>
       <Head>
         <title>Studio - Audio Production Suite</title>
-        <meta name="description" content="Professional audio production tools - DAWn_EE, Arco, and Silence Sandbox" />
+        <meta name="description" content="Professional audio production tools - DAWn_EE, Arco, and Catch" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -107,7 +107,7 @@ export default function Studio() {
 
         {selectedMode === 'silence-sandbox' && (
           <>
-            <h1 className="mb-3">Silence Sandbox</h1>
+            <h1 className="mb-3">Catch</h1>
             <p className="text-muted mb-4">
               Analyze audio files for silence detection
             </p>
