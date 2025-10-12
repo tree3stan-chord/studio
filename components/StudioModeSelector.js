@@ -95,7 +95,7 @@ const StudioModeSelector = ({ show, onSelectMode }) => {
                     <BiAnalyse className="ms-2" />
                   </div>
                 </div>
-                <h3 className="mb-2">Silence Sandbox</h3>
+                <h3 className="mb-2">Catch</h3>
                 <p className="text-muted mb-0">
                   Audio Analysis Tool
                 </p>
