@@ -1,0 +1,9 @@
+[submodule "components/arco"]
+	path = components/arco
+	url = ../arco
+[submodule "components/daw"]
+	path = components/daw
+	url = ../DAWn_EE
+[submodule "components/silence"]
+	path = components/silence
+	url = ../catch
