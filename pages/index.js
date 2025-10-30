@@ -15,6 +15,12 @@ const SilenceSandbox = dynamic(
   { ssr: false }
 );
 
+// Dynamically import ChiaroscuroSandbox to avoid SSR issues with Web Audio API
+const ChiaroscuroSandbox = dynamic(
+  () => import('../components/chiaroscuro/ChiaroscuroSandbox'),
+  { ssr: false }
+);
+
 // Dynamically import the modal to avoid SSR issues
 const StudioModeSelector = dynamic(
   () => import('../components/StudioModeSelector'),
@@ -56,7 +62,7 @@ export default function Studio() {
     <>
       <Head>
         <title>Studio - Audio Production Suite</title>
-        <meta name="description" content="Professional audio production tools - DAWn_EE, Arco, and Catch" />
+        <meta name="description" content="Professional audio production tools - DAWn_EE, Arco, Catch, and Chiaroscuro" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -122,6 +128,16 @@ export default function Studio() {
               Design and test custom virtual instruments
             </p>
             <InstrumentSandbox />
+          </>
+        )}
+
+        {selectedMode === 'chiaroscuro' && (
+          <>
+            <h1 className="mb-3">Chiaroscuro</h1>
+            <p className="text-muted mb-4">
+              Interactive audio playground - manipulate ethereal soundscapes through fluid visuals
+            </p>
+            <ChiaroscuroSandbox />
           </>
         )}
       </Container>

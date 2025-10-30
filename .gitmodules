@@ -7,3 +7,6 @@
 [submodule "components/silence"]
 	path = components/silence
 	url = ../catch
+[submodule "components/chiaroscuro"]
+	path = components/chiaroscuro
+	url = git@github.com:tree3stan-chord/chiaroscuro.git
