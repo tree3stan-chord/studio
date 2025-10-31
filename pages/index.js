@@ -67,19 +67,43 @@ export default function Studio() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Container fluid className="studio-container p-4">
-        {/* Back button when a mode is selected */}
-        {selectedMode && (
+      {/* Chiaroscuro gets full screen treatment */}
+      {selectedMode === 'chiaroscuro' ? (
+        <>
           <Button
-            variant="outline-secondary"
+            variant="outline-light"
             size="sm"
             onClick={handleBackToStudio}
-            className="mb-3 d-flex align-items-center gap-2"
+            style={{
+              position: 'fixed',
+              top: '1rem',
+              left: '1rem',
+              zIndex: 2000,
+              background: 'rgba(20, 20, 30, 0.8)',
+              backdropFilter: 'blur(10px)',
+              border: 'none'
+            }}
+            className="d-flex align-items-center gap-2"
           >
             <IoArrowBack />
             Back to Studio
           </Button>
-        )}
+          <ChiaroscuroSandbox />
+        </>
+      ) : (
+        <Container fluid className="studio-container p-4">
+          {/* Back button when a mode is selected */}
+          {selectedMode && (
+            <Button
+              variant="outline-secondary"
+              size="sm"
+              onClick={handleBackToStudio}
+              className="mb-3 d-flex align-items-center gap-2"
+            >
+              <IoArrowBack />
+              Back to Studio
+            </Button>
+          )}
 
         {/* Mode selector modal - only render on client side */}
         {mounted && (
@@ -131,16 +155,8 @@ export default function Studio() {
           </>
         )}
 
-        {selectedMode === 'chiaroscuro' && (
-          <>
-            <h1 className="mb-3">Chiaroscuro</h1>
-            <p className="text-muted mb-4">
-              Interactive audio playground - manipulate ethereal soundscapes through fluid visuals
-            </p>
-            <ChiaroscuroSandbox />
-          </>
-        )}
-      </Container>
+        </Container>
+      )}
     </>
   );
 }
