@@ -2,11 +2,10 @@
 
 import { Modal, Card, Row, Col } from 'react-bootstrap';
 import { MdMusicNote, MdVolumeOff } from 'react-icons/md';
-import { FaWaveSquare, FaDroplet } from 'react-icons/fa';
+import { FaWaveSquare, FaTint } from 'react-icons/fa';
 import { BiAnalyse } from 'react-icons/bi';
 import { GiSoundWaves } from 'react-icons/gi';
-import { IoSettingsSharp } from 'react-icons/io5';
-import { RiLightbulbFlashLine } from 'react-icons/ri';
+import { IoSettingsSharp, IoColorPaletteSharp } from 'react-icons/io5';
 
 const StudioModeSelector = ({ show, onSelectMode }) => {
   return (
@@ -170,8 +169,8 @@ const StudioModeSelector = ({ show, onSelectMode }) => {
               <Card.Body className="text-center d-flex flex-column justify-content-center p-4">
                 <div className="mb-3">
                   <div className="d-flex justify-content-center align-items-center" style={{ fontSize: '3rem', color: '#e74c3c' }}>
-                    <FaDroplet />
-                    <RiLightbulbFlashLine className="ms-2" />
+                    <FaTint />
+                    <IoColorPaletteSharp className="ms-2" />
                   </div>
                 </div>
                 <h3 className="mb-2">Chiaroscuro</h3>
