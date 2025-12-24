@@ -1,0 +1,29 @@
+# cloudflared tunnel configuration
+#
+# This file shows the ingress rules needed for studio.espadonne.com
+#
+# INSTRUCTIONS:
+# 1. First, get your existing config: sudo cat /etc/cloudflared/config.yml
+# 2. Add the studio.espadonne.com rule BEFORE the catch-all rule
+# 3. Copy this file: sudo cp cloudflared.config.yml /etc/cloudflared/config.yml
+# 4. Restart cloudflared: sudo systemctl restart cloudflared
+#
+# Your tunnel ID should already be in your existing config.
+# Replace <YOUR-TUNNEL-ID> below with your actual tunnel ID.
+
+tunnel: <YOUR-TUNNEL-ID>
+credentials-file: /etc/cloudflared/<YOUR-TUNNEL-ID>.json
+
+ingress:
+  # Studio subdomain - add this rule
+  - hostname: studio.espadonne.com
+    service: http://localhost:80
+
+  # Your existing espadonne.com rule (keep this)
+  - hostname: espadonne.com
+    service: http://localhost:80
+
+  # Any other existing rules go here...
+
+  # Catch-all rule (required, must be last)
+  - service: http_status:404
