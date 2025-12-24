@@ -21,6 +21,18 @@ const ChiaroscuroSandbox = dynamic(
   { ssr: false }
 );
 
+// Dynamically import ParallaxSandbox to avoid SSR issues with Web Audio API
+const ParallaxSandbox = dynamic(
+  () => import('../components/parallax/ParallaxSandbox'),
+  { ssr: false }
+);
+
+// Dynamically import CueSandbox to avoid SSR issues with camera/audio
+const CueSandbox = dynamic(
+  () => import('../components/cue/CueSandbox'),
+  { ssr: false }
+);
+
 // Dynamically import the modal to avoid SSR issues
 const StudioModeSelector = dynamic(
   () => import('../components/StudioModeSelector'),
@@ -67,8 +79,8 @@ export default function Studio() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      {/* Chiaroscuro gets full screen treatment */}
-      {selectedMode === 'chiaroscuro' ? (
+      {/* Full screen apps: Chiaroscuro, Parallax, Cue */}
+      {(selectedMode === 'chiaroscuro' || selectedMode === 'parallax' || selectedMode === 'cue') ? (
         <>
           <Button
             variant="outline-light"
@@ -88,7 +100,9 @@ export default function Studio() {
             <IoArrowBack />
             Back to Studio
           </Button>
-          <ChiaroscuroSandbox />
+          {selectedMode === 'chiaroscuro' && <ChiaroscuroSandbox />}
+          {selectedMode === 'parallax' && <ParallaxSandbox />}
+          {selectedMode === 'cue' && <CueSandbox />}
         </>
       ) : (
         <Container fluid className="studio-container p-4">

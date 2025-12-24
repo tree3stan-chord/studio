@@ -2,10 +2,12 @@
 
 import { Modal, Card, Row, Col } from 'react-bootstrap';
 import { MdMusicNote, MdVolumeOff } from 'react-icons/md';
-import { FaWaveSquare, FaTint } from 'react-icons/fa';
+import { FaWaveSquare, FaTint, FaHandPaper } from 'react-icons/fa';
 import { BiAnalyse } from 'react-icons/bi';
 import { GiSoundWaves } from 'react-icons/gi';
 import { IoSettingsSharp, IoColorPaletteSharp } from 'react-icons/io5';
+import { BsSoundwave } from 'react-icons/bs';
+import { TbWaveSine } from 'react-icons/tb';
 
 const StudioModeSelector = ({ show, onSelectMode }) => {
   return (
@@ -29,7 +31,7 @@ const StudioModeSelector = ({ show, onSelectMode }) => {
       <Modal.Body className="pt-2 pb-4">
         <Row className="g-4 mt-2">
           {/* DAWn_EE Card */}
-          <Col lg={3} md={6}>
+          <Col lg={4} md={6}>
             <Card
               className="h-100 studio-mode-card"
               style={{
@@ -68,7 +70,7 @@ const StudioModeSelector = ({ show, onSelectMode }) => {
           </Col>
 
           {/* Catch Card */}
-          <Col lg={3} md={6}>
+          <Col lg={4} md={6}>
             <Card
               className="h-100 studio-mode-card"
               style={{
@@ -107,7 +109,7 @@ const StudioModeSelector = ({ show, onSelectMode }) => {
           </Col>
 
           {/* Arco Card */}
-          <Col lg={3} md={6}>
+          <Col lg={4} md={6}>
             <Card
               className="h-100 studio-mode-card"
               style={{
@@ -146,7 +148,7 @@ const StudioModeSelector = ({ show, onSelectMode }) => {
           </Col>
 
           {/* Chiaroscuro Card */}
-          <Col lg={3} md={6}>
+          <Col lg={4} md={6}>
             <Card
               className="h-100 studio-mode-card"
               style={{
@@ -179,6 +181,84 @@ const StudioModeSelector = ({ show, onSelectMode }) => {
                 </p>
                 <p className="small text-muted mt-2">
                   Manipulate ethereal soundscapes by shaping fluid lava lamp visuals with real-time audio
+                </p>
+              </Card.Body>
+            </Card>
+          </Col>
+
+          {/* Parallax Card */}
+          <Col lg={4} md={6}>
+            <Card
+              className="h-100 studio-mode-card"
+              style={{
+                cursor: 'pointer',
+                transition: 'all 0.3s ease',
+                border: '2px solid #dee2e6'
+              }}
+              onClick={() => onSelectMode('parallax')}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'translateY(-5px)';
+                e.currentTarget.style.boxShadow = '0 5px 15px rgba(0,0,0,0.3)';
+                e.currentTarget.style.borderColor = '#00ff88';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.boxShadow = 'none';
+                e.currentTarget.style.borderColor = '#dee2e6';
+              }}
+            >
+              <Card.Body className="text-center d-flex flex-column justify-content-center p-4">
+                <div className="mb-3">
+                  <div className="d-flex justify-content-center align-items-center" style={{ fontSize: '3rem', color: '#00ff88' }}>
+                    <TbWaveSine />
+                    <BsSoundwave className="ms-2" />
+                  </div>
+                </div>
+                <h3 className="mb-2">Parallax</h3>
+                <p className="text-muted mb-0">
+                  ASCII Audio Visualizer
+                </p>
+                <p className="small text-muted mt-2">
+                  Real-time ASCII art visualizations driven by microphone or audio file input
+                </p>
+              </Card.Body>
+            </Card>
+          </Col>
+
+          {/* Cue Card */}
+          <Col lg={4} md={6}>
+            <Card
+              className="h-100 studio-mode-card"
+              style={{
+                cursor: 'pointer',
+                transition: 'all 0.3s ease',
+                border: '2px solid #dee2e6'
+              }}
+              onClick={() => onSelectMode('cue')}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'translateY(-5px)';
+                e.currentTarget.style.boxShadow = '0 5px 15px rgba(0,0,0,0.3)';
+                e.currentTarget.style.borderColor = '#ffcc00';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.boxShadow = 'none';
+                e.currentTarget.style.borderColor = '#dee2e6';
+              }}
+            >
+              <Card.Body className="text-center d-flex flex-column justify-content-center p-4">
+                <div className="mb-3">
+                  <div className="d-flex justify-content-center align-items-center" style={{ fontSize: '3rem', color: '#ffcc00' }}>
+                    <FaHandPaper />
+                    <GiSoundWaves className="ms-2" />
+                  </div>
+                </div>
+                <h3 className="mb-2">Cue</h3>
+                <p className="text-muted mb-0">
+                  Gesture DSP Controller
+                </p>
+                <p className="small text-muted mt-2">
+                  Control audio effects with hand gestures using color tracking and webcam input
                 </p>
               </Card.Body>
             </Card>

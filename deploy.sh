@@ -107,6 +107,14 @@ npm ci
 echo "▶ npm run build (static export to ./out)"
 npm run build
 
+# Copy static iframe apps into the build output
+echo "▶ copy static iframe apps (parallax, cue)"
+cp -r components/parallax out/parallax
+cp -r components/cue out/cue
+# Clean up non-web files from copied submodules
+rm -f out/parallax/.git out/parallax/.gitignore out/parallax/deploy.sh out/parallax/ParallaxSandbox.js
+rm -f out/cue/.git out/cue/.gitignore out/cue/deploy.sh out/cue/CueSandbox.js out/cue/README.md
+
 # Move build output to timestamped folder
 mkdir -p ~/builds
 mv out "$OUTDIR"

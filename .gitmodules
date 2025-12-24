@@ -10,3 +10,9 @@
 [submodule "components/chiaroscuro"]
 	path = components/chiaroscuro
 	url = git@github.com:tree3stan-chord/chiaroscuro.git
+[submodule "components/parallax"]
+	path = components/parallax
+	url = ../parallax
+[submodule "components/cue"]
+	path = components/cue
+	url = ../../zeroed-some/cue-web
